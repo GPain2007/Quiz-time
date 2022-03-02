@@ -9,22 +9,15 @@
   </head>
 
   <body>
-    <p id="countdown"></p>
-    <div class="wrapper">
-      <header class="header">
-        <h1>
-          It's Quiz Time. Take the quiz on what you know and try to get the high
-          score! Let's go!
-        </h1>
-        <div class="card">
-          <div class="card-header">
-            <div class="quiz-time">
-              <button id="quiz" class="btn">Let's Begin</button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div class="container">
+      <p id="countdown"></p>
+      <div id="home" class="flex-column flex-center">
+        <h1>Quiz Time</h1>
+        <a href="/quiz.html" class="btn">Start Quiz</a>
+        <a href="/highscore.html" id="highscore-btn" class="btn">HighScores</a>
+      </div>
     </div>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
