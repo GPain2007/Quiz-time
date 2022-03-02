@@ -1,0 +1,42 @@
+body {
+  color: rgb(1, 5, 8);
+}
+#question {
+  font-size: 28px;
+}
+.choice-container {
+  display: flex;
+  margin-bottom: 12px;
+  width: 100%;
+  border-radius: 20px;
+  background: blue;
+  font-size: 12px;
+  min-width: 8px;
+}
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 1.5px crimson;
+  transform: scale(1.02);
+  transform: transform 100ms;
+}
+.choice-prefix {
+  padding: 2px 2px;
+  width: 100%;
+}
+#hud {
+  display: flex;
+  justify-content: space-between;
+}
+.hud-prefix {
+  text-align: center;
+  font-size: 2px;
+}
+.hud-main-text {
+  text-align: center;
+}
+
+@media screen and (max-width: 760px) {
+  .choice-container {
+    min-width: 40px;
+  }
+}

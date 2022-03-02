@@ -15,61 +15,61 @@ let questions = [
     choice1: "1",
     choice2: "2",
     choice3: "3",
-    choice: "4",
+    choice4: "4",
     answer: 4,
   },
   {
-    question: "What is 2 + 2?",
+    question: "What is 0 + 2?",
+    choice1: "1",
+    choice2: "2",
+    choice3: "3",
+    choice4: "4",
+    answer: 3,
+  },
+  {
+    question: "What is 5 + 2?",
+    choice1: "1",
+    choice2: "2",
+    choice3: "3",
+    choice4: "4",
+    answer: 2,
+  },
+  {
+    question: "What is 3 + 2?",
+    choice1: "1",
+    choice2: "2",
+    choice3: "3",
+    choice4: "4",
+    answer: 1,
+  },
+  {
+    question: "What is 4 + 2?",
     choice1: "1",
     choice2: "2",
     choice3: "3",
     choice: "4",
-    answer: 4,
-  },
-  {
-    question: "What is 2 + 2?",
-    choice1: "1",
-    choice2: "2",
-    choice3: "3",
-    choice: "4",
-    answer: 4,
-  },
-  {
-    question: "What is 2 + 2?",
-    choice1: "1",
-    choice2: "2",
-    choice3: "3",
-    choice: "4",
-    answer: 4,
-  },
-  {
-    question: "What is 2 + 2?",
-    choice1: "1",
-    choice2: "2",
-    choice3: "3",
-    choice: "4",
-    answer: 4,
+    answer: 3,
   },
 ];
 const SCORE_POINTS = 100;
 const MAX_QUESTIONS = 3;
 
-startQuiz = () => {
+function startQuiz() {
   questionCounter = 0;
   score = 0;
   availableQuestions = { ...questions };
   getNewQuestion();
-};
-getNewQuestion = () => {
+}
+function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("/end.html");
+    return window.location.assign("/gameover.html");
   }
 
   questionCounter++;
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionsIndex];
-  question.innerText = currentQuestion.question;
+  question.innerText = question.currentQuestion;
 
   choices.forEach((choice) => {
     const number = choice.dataset["number"];
@@ -79,7 +79,7 @@ getNewQuestion = () => {
   availableQuestions.splice(questionsIndex, 1);
 
   acceptingAnswers = true;
-};
+}
 
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
@@ -107,7 +107,9 @@ incrementScore = (num) => {
   score += num;
   scoreText.innerText = score;
 };
-function countdown() {
+startQuiz();
+
+/*function countdown() {
   var timeLeft = 60;
 
   var timeInterval = setInterval(function () {
@@ -121,4 +123,4 @@ function countdown() {
     clearInterval(timeLeft);
   }, 1000);
 }
-countdown();
+countdown();*/
