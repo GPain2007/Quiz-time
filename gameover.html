@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./assets/css/style.css" class="style" />
   </head>
   <body>
-    <div id="end" class="flex-center flex-column">
-      <h1 id="finalScorce">0</h1>
+    <a id="end" class="flex-center flex-column">
+      <h1 id="finalScore">0</h1>
       <form class="end-form-container">
         <h2 id="end-text">enter your name</h2>
         <input
@@ -18,8 +18,19 @@
           id="username"
           placeholder="enter your name"
         />
-        <button class="btn" id="saveScoreBtn" type="submit">Submit</button>
+        <button
+          class="btn"
+          id="saveScoreBtn"
+          type="submit"
+          onclick="saveHighScore(event)"
+          disabled
+        >
+          Submit
+        </button>
       </form>
-    </div>
+      <a href="./quiz.html" class="btn flex-center">Retake Quiz</a>
+      <a href="./index.html" class="btn flex-center flex-column">home</a>
+    </a>
+    <script src="./assets/js/gameover.js"></script>
   </body>
 </html>

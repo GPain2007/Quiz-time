@@ -1,13 +1,13 @@
 const question = document.querySelector("#question");
 const choices = Array.from(document.querySelectorAll(".choice-text"));
-const scoreText = document.querySelector("score");
+const scoreText = document.querySelector(".score");
 var timerEl = document.getElementById("countdown");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
-let availableQuestions = {};
+let availableQuestions = [];
 
 let questions = [
   {
@@ -24,19 +24,19 @@ let questions = [
     choice2: "2",
     choice3: "3",
     choice4: "4",
-    answer: 3,
+    answer: 2,
   },
   {
     question: "What is 5 + 2?",
     choice1: "1",
-    choice2: "2",
+    choice2: "7",
     choice3: "3",
     choice4: "4",
     answer: 2,
   },
   {
     question: "What is 3 + 2?",
-    choice1: "1",
+    choice1: "5",
     choice2: "2",
     choice3: "3",
     choice4: "4",
@@ -46,8 +46,8 @@ let questions = [
     question: "What is 4 + 2?",
     choice1: "1",
     choice2: "2",
-    choice3: "3",
-    choice: "4",
+    choice3: "6",
+    choice4: "4",
     answer: 3,
   },
 ];
@@ -57,19 +57,19 @@ const MAX_QUESTIONS = 3;
 function startQuiz() {
   questionCounter = 0;
   score = 0;
-  availableQuestions = { ...questions };
+  availableQuestions = [...questions];
   getNewQuestion();
 }
 function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score);
-    return window.location.assign("/gameover.html");
+
+    return window.location.assign("./gameover.html");
   }
 
-  questionCounter++;
   const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionsIndex];
-  question.innerText = question.currentQuestion;
+  question.innerText = currentQuestion.question;
 
   choices.forEach((choice) => {
     const number = choice.dataset["number"];
@@ -79,7 +79,12 @@ function getNewQuestion() {
   availableQuestions.splice(questionsIndex, 1);
 
   acceptingAnswers = true;
+  questionCounter++;
 }
+const incrementScore = (num) => {
+  score += num;
+  scoreText.innerText = score;
+};
 
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
@@ -103,10 +108,7 @@ choices.forEach((choice) => {
     }, 1000);
   });
 });
-incrementScore = (num) => {
-  score += num;
-  scoreText.innerText = score;
-};
+
 startQuiz();
 
 /*function countdown() {
