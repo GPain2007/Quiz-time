@@ -17,5 +17,6 @@ function saveHighScore(event) {
   } else {
     localStorage.setItem("scores", JSON.stringify([scores]));
   }
+  return window.location.assign("./index.html");
   console.log(scores);
 }

@@ -18,7 +18,18 @@ body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
+
 .container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 2px;
+}
+.highscorecontainer {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -138,12 +149,15 @@ input::placeholder {
 }
 
 p {
-  background-color: aliceblue;
   display: inline-flex;
   align-items: flex-end;
   justify-content: flex-end;
-  font-size: 50px;
+  font-size: 15px;
   margin: 0;
-  height: 70px;
-  width: 200px;
+  height: 200px;
+  width: 400px;
+}
+#highscore {
+  max-width: 400px;
+  width: 600px;
 }
