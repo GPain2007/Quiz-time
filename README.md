@@ -1,5 +1,7 @@
 # Quiz-time
 
+https://gpain2007.github.io/Quiz-time/
+
 This is a Quiz about Java script and its functions. You can take the quiz and the result will equal the amount of point you get for correct answers in a certain amount of time. This quiz was made by linking seperate pages. You will see the following pages in the folders. Each page is for a different part of the quiz. I could have placed the,m all on one page but it was easier for me to do it this way.
 
 
