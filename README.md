@@ -1,6 +1,6 @@
 # Quiz-time
 
-This is a Quiz about Java script and its functions. This was made by linking seperate pages. You will see the following pages in the folders. each page is for a different part of the quiz. I could have placed the,m all on one page but it was easier for me to do it this way.
+This is a Quiz about Java script and its functions. You can take the quiz and the result will equal the amount of point you get for correct answers in a certain amount of time. This quiz was made by linking seperate pages. You will see the following pages in the folders. Each page is for a different part of the quiz. I could have placed the,m all on one page but it was easier for me to do it this way.
 
 
 <img width="1512" alt="Screen Shot 2022-03-07 at 12 22 32 AM" src="https://user-images.githubusercontent.com/97716889/156979105-3eefc507-fa20-4de8-a7d5-bc9a45cb68d8.png">
